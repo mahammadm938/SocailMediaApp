@@ -3,9 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>New Post</title>
+	    <link rel="stylesheet" type="text/css" th:href="@{/newPosts.css}">
 	</head>
 	<body>
-		<h2>profile Creation</h2>
+	 <!-- Navigation bar -->
+    <nav>
+        <a href="/showPosts">News feed</a>
+        <a href="/openCreatePost">Create post</a>
+        <a href="#">My profile</a>
+    </nav>
+	
+		<h2>post Creation</h2>
 		<form id="ProfileForm" action="/createPost" method="post" 
 		 enctype="multipart/form-data">
 		 <textarea name="caption" placeholder="caption" required></textarea>
