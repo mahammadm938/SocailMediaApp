@@ -40,12 +40,6 @@ public class PostController {
 	 	
 	}
 	
-	@GetMapping("/showPosts")
-	public String showPosts(Model model) {
-		List<Post> allPosts = service.fetchAllPosts();
-		model.addAttribute("allPosts", allPosts);
-		return "home";
-	}
 	@PostMapping("/likePost")
 	public String likePost(@RequestParam Long id, Model model) {
 		Post post= service.getPost(id);
@@ -75,4 +69,5 @@ public class PostController {
 		return "home";
 	}
 
+	
 }

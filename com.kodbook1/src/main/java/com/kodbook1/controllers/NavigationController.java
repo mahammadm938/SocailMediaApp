@@ -17,10 +17,14 @@ import com.kodbook1.services.PostService;
 public class NavigationController {
 	@Autowired
 	PostService postService;
+	
+	//Navigation to open  the index page
 	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
+	
+	//Navigation for creating the posts
 	@GetMapping("/openSignUp")
 	public String openSignUp() {
 		return "signUp";
@@ -29,10 +33,23 @@ public class NavigationController {
 	public String openCreatePost() {
 		return "createPost";
 	}
+	
+	//Navigation for showing the allPosts at a time 
 	@GetMapping("/goHome")
 	public String login(Model model)	{
 			List<Post> allPosts = postService.fetchAllPosts();
 			model.addAttribute("allPosts", allPosts);
 			return "home";
+	}
+	//Navigation for opening the profile 
+	@GetMapping("/openMyProfile")
+	public String openMyProfile() {
+		return "myProfile";
+	}
+
+	//Navigation for editing the Profile 
+	@GetMapping("/openEditProfile")
+	public String openEditProfile() {
+		return "editProfile";
 	}
 }
