@@ -1,0 +1,136 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFD7C4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 8px;
+}
+
+nav a:hover {
+    color: #f4b400;
+}
+
+/* Profile Header */
+.profile-header {
+    background-color:  #9DBDFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.cover-photo {
+    background-color: #333;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.profile-picture {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username h1 {
+    margin-top: 80px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Profile Content */
+.profile-content {
+	text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.profile-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-info li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.profile-info i {
+    margin-right: 10px;
+    color: #4CAF50;
+}
+
+.social-links p {
+    margin: 10px 0;
+}
+
+.social-links a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .profile-header {
+        padding: 10px;
+    }
+
+    .username h1 {
+        font-size: 22px;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info li {
+        font-size: 14px;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+}

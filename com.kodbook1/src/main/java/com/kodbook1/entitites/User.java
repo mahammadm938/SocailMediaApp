@@ -52,7 +52,7 @@ public class User {
 	}
 
 	public User(Long id, String username, String email, String password, String dob, String gender, String city,
-			String bio, String college, String linkedIn, String gitHub, List<Post> posts,  byte[] profilePic) {
+			String bio, String college, String linkedIn, String gitHub, List<Post> posts, byte[] profilePic) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -153,7 +153,7 @@ public class User {
 		return gitHub;
 	}
 
-	public void setGithub(String gitHub) {
+	public void setGitHub(String gitHub) {
 		this.gitHub = gitHub;
 	}
 
@@ -165,21 +165,20 @@ public class User {
 		this.posts = posts;
 	}
 
-	public byte[] getPhoto() {
+	public byte[] getProfilePic() {
 		return profilePic;
 	}
 
-	public void setPhoto(byte[] photo) {
-		this.profilePic = photo;
+	public void setProfilePic(byte[] profilePic) {
+		this.profilePic = profilePic;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + ", dob="
 				+ dob + ", gender=" + gender + ", city=" + city + ", bio=" + bio + ", college=" + college
-				+ ", linkedIn=" + linkedIn + ", github=" + gitHub + ", posts=" + posts + ", photo="
+				+ ", linkedIn=" + linkedIn + ", gitHub=" + gitHub + ", posts=" + posts + ", profilePic="
 				+ Arrays.toString(profilePic) + "]";
 	}
-	
-	
+		
 }

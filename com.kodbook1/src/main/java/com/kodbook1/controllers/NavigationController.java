@@ -10,13 +10,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kodbook1.entitites.Post;
+import com.kodbook1.entitites.User;
 import com.kodbook1.services.PostService;
+import com.kodbook1.services.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 
 @Controller
 public class NavigationController {
 	@Autowired
 	PostService postService;
+	
+	@Autowired
+	UserService service;
+	
 	
 	//Navigation to open  the index page
 	@GetMapping("/")
@@ -43,7 +51,10 @@ public class NavigationController {
 	}
 	//Navigation for opening the profile 
 	@GetMapping("/openMyProfile")
-	public String openMyProfile() {
+	public String openMyProfile(Model model, HttpSession session) {
+		String username= (String) session.getAttribute("username");
+		User user=service.getUser(username);
+		model.addAttribute("user", user);
 		return "myProfile";
 	}
 
@@ -52,4 +63,5 @@ public class NavigationController {
 	public String openEditProfile() {
 		return "editProfile";
 	}
+	
 }
