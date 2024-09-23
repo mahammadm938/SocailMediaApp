@@ -24,7 +24,7 @@
                         <img th:if="${post.user.photoBase64}" 
                              th:src="'data:image/jpeg;base64,' + ${post.user.photoBase64}" 
                              alt="User Photo" />
-                    </div>
+                  </div> 
                 <!-- Check if post.user is not null before accessing post.user.username -->
                <span  th:if="${post.user != null}" th:text="${post.user.username}">Unknown</span>
               </div>

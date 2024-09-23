@@ -38,8 +38,13 @@ public class NavigationController {
 		return "signUp";
 	}
 	@GetMapping("/openCreatePost")
-	public String openCreatePost() {
-		return "createPost";
+	public String openCreatePost(HttpSession session) {
+		//return "createPost";
+		//if the username is null do not open 
+		if(session.getAttribute("username")!= null)
+			return "createPost";
+		else
+			return "index";
 	}
 	
 	//Navigation for showing the allPosts at a time 
@@ -56,6 +61,7 @@ public class NavigationController {
 		User user=service.getUser(username);
 		model.addAttribute("user", user);
 		
+		
 		List<Post> myPosts=user.getPosts();
 		model.addAttribute("myPosts", myPosts); 
 		return "myProfile";
@@ -63,8 +69,22 @@ public class NavigationController {
 
 	//Navigation for editing the Profile 
 	@GetMapping("/openEditProfile")
-	public String openEditProfile() {
-		return "editProfile";
+	public String openEditProfile(HttpSession session) {
+		
+		//if the username is null do not open 
+		if(session.getAttribute("username")!= null)
+			return "editProfile";
+		else
+			return "index";
+	}
+	
+	//Navigation for logout 
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		
+		session.invalidate();
+		return "index";
+		
 	}
 	
 }
