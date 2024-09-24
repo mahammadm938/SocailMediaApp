@@ -84,7 +84,16 @@ public class NavigationController {
 		
 		session.invalidate();
 		return "index";
-		
 	}
 	
+	//To visit the profile of the particular user who as posted the post
+	@PostMapping("/visitProfile")
+	public String visitProfile(@RequestParam String profileName, Model model) {
+		User user=service.getUser(profileName);
+		model.addAttribute("user", user);
+		List<Post> myPosts= user.getPosts();
+		model.addAttribute("myPosts", myPosts);
+		return "showUserProfile";
+		
+	}
 }
